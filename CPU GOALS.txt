@@ -1,0 +1,4 @@
+- Building off CPU included in Logisim
+- Build IO Functions into CPU
+- Implement Store Functions
+- General cleanup?
