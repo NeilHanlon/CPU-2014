@@ -1,0 +1,25 @@
+00  mov Ra, 10    ; a = 10
+01  mov Rb, 1     ; b = 1
+02  mov Rc, 1     ; c = 1
+03  mov Rd, 0
+04  mov Rd, Rc ; .gib swaps ebx and ecx
+05  mov Rb, Rc
+06  mov Rc, Rb
+07  add Rb, Rb, Rc   ; b = b + c
+; ebx contains the next fibonacci number, do ;something with it here (calling printf, perhaps)
+08  WRITE Rb
+09  SUB Ra, Ra, 01 ; a--
+10  JZG Ra, 07        ; if (a > 0) goto fib
+
+
+
+00  710F ;counter 
+01  7201 ; fib 
+02  7301 ; fibPrev
+03  7400 ; tempt
+04  2420 ; temp = fib
+05  2223 ; fib = fib + fibPrev
+06  2340 ; fibPrev = temp
+08  e220 ; store reg 2 to 20
+09  5111 ; decrement counter
+0a  8005 ; loop forever
